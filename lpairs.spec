@@ -13,7 +13,6 @@ Source4:	%{name}.menu
 
 License:	GPL
 Group:		Games/Puzzles
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	SDL-devel libSDL_mixer-devel X11-devel alsa-lib-devel
 BuildRequires:	filesystem esound-devel texinfo
 
