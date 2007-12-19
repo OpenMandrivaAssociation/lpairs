@@ -9,7 +9,6 @@ Release:	%release
 URL:		http://lgames.sourceforge.net/index.php?project=LPairs
 
 Source0:	http://peterhost.dl.sourceforge.net/sourceforge/lgames/%{name}-%{version}.tar.bz2
-Source4:	%{name}.menu
 
 License:	GPL
 Group:		Games/Puzzles
@@ -33,7 +32,15 @@ counted but there is no highscore chart or limit to this.
 rm -rf $RPM_BUILD_ROOT
 %makeinstall inst_dir="$RPM_BUILD_ROOT%{_gamesdatadir}/%{name}" bindir="$RPM_BUILD_ROOT%{_gamesbindir}"
 
-install -D -m644 %SOURCE4 $RPM_BUILD_ROOT%{_menudir}/%{name}
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
+cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
+[Desktop Entry]
+Type=Application
+Categories=Game;LogicGame;                
+Name=LPairs                
+Comment=Memory game                
+Exec=/usr/games/lpairs
+EOF
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -49,5 +56,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc README
 %{_gamesbindir}/%{name}
 %{_gamesdatadir}/%{name}/*
-%{_menudir}/%{name}
+%{_datadir}/applications/mandriva-%{name}.desktop
 
