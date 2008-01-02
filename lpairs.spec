@@ -12,6 +12,7 @@ Source0:	http://peterhost.dl.sourceforge.net/sourceforge/lgames/%{name}-%{versio
 
 License:	GPL
 Group:		Games/Puzzles
+BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	SDL-devel libSDL_mixer-devel X11-devel alsa-lib-devel
 BuildRequires:	filesystem esound-devel texinfo
 
