@@ -1,16 +1,12 @@
-%define release  %mkrel 1
-
+%define release  %mkrel 2
 
 Summary:	Memory game
 Name:		lpairs
 Version:	1.0.1
 Release:	%release
-
 URL:		http://lgames.sourceforge.net/index.php?project=LPairs
-
 Source0:	http://peterhost.dl.sourceforge.net/sourceforge/lgames/%{name}-%{version}.tar.bz2
-
-License:	GPL
+License:	GPLv2+
 Group:		Games/Puzzles
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	SDL-devel libSDL_mixer-devel X11-devel alsa-lib-devel
@@ -37,9 +33,9 @@ mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
 cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
 [Desktop Entry]
 Type=Application
-Categories=Game;LogicGame;                
-Name=LPairs                
-Comment=Memory game                
+Categories=Game;LogicGame;
+Name=LPairs
+Comment=Memory game
 Exec=/usr/games/lpairs
 EOF
 
@@ -58,4 +54,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_gamesbindir}/%{name}
 %{_gamesdatadir}/%{name}/*
 %{_datadir}/applications/mandriva-%{name}.desktop
-
