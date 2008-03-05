@@ -1,16 +1,21 @@
-%define release  %mkrel 2
+%define release %mkrel 1
 
-Summary:	Memory game
-Name:		lpairs
-Version:	1.0.1
-Release:	%release
-URL:		http://lgames.sourceforge.net/index.php?project=LPairs
-Source0:	http://peterhost.dl.sourceforge.net/sourceforge/lgames/%{name}-%{version}.tar.bz2
-License:	GPLv2+
-Group:		Games/Puzzles
-BuildRoot:	%{_tmppath}/%{name}-buildroot
-BuildRequires:	SDL-devel libSDL_mixer-devel X11-devel alsa-lib-devel
-BuildRequires:	filesystem esound-devel texinfo
+Summary: Memory game
+Name: lpairs
+Version: 1.0.3
+Release: %release
+URL: http://lgames.sourceforge.net/index.php?project=LPairs
+Source0: http://peterhost.dl.sourceforge.net/sourceforge/lgames/%{name}-%{version}.tar.gz
+License: GPLv2+
+Group: Games/Puzzles
+BuildRoot: %{_tmppath}/%{name}-buildroot
+BuildRequires: SDL-devel
+BuildRequires: libSDL_mixer-devel
+BuildRequires: X11-devel
+BuildRequires: alsa-lib-devel
+BuildRequires: filesystem
+BuildRequires: esound-devel
+BuildRequires: texinfo
 
 %description
 LPairs is a classical memory game. This means you have to find pairs of
@@ -22,7 +27,7 @@ counted but there is no highscore chart or limit to this.
 
 %build
 %configure \
-    --localstatedir=%{_localstatedir}/games
+ --localstatedir=%{_localstatedir}/games
 %make
 
 %install
@@ -39,6 +44,8 @@ Comment=Memory game
 Exec=/usr/games/lpairs
 EOF
 
+%find_lang %{name}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -48,7 +55,7 @@ rm -rf $RPM_BUILD_ROOT
 %postun
 %{clean_menus}
 
-%files
+%files -f %{name}.lang
 %defattr(-,root,root)
 %doc README
 %{_gamesbindir}/%{name}
