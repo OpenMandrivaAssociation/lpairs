@@ -27,7 +27,7 @@ counted but there is no highscore chart or limit to this.
 
 %build
 %configure \
- --localstatedir=%{_localstatedir}/games
+ --localstatedir=%{_localstatedir}/lib/games
 %make
 
 %install
