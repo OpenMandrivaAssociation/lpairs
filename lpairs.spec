@@ -1,8 +1,8 @@
-%define release %mkrel 3
+%define release %mkrel 1
 
 Summary: Memory game
 Name: lpairs
-Version: 1.0.3
+Version: 1.0.4
 Release: %release
 URL: http://lgames.sourceforge.net/index.php?project=LPairs
 Source0: http://peterhost.dl.sourceforge.net/sourceforge/lgames/%{name}-%{version}.tar.gz
@@ -10,11 +10,7 @@ License: GPLv2+
 Group: Games/Puzzles
 BuildRoot: %{_tmppath}/%{name}-buildroot
 BuildRequires: SDL-devel
-BuildRequires: libSDL_mixer-devel
-BuildRequires: X11-devel
-BuildRequires: alsa-lib-devel
 BuildRequires: filesystem
-BuildRequires: esound-devel
 BuildRequires: texinfo
 
 %description
@@ -26,13 +22,14 @@ counted but there is no highscore chart or limit to this.
 %setup -q
 
 %build
-%configure \
+%configure2_5x \
+ --bindir=%_gamesbindir \
  --localstatedir=%{_localstatedir}/lib/games
 %make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%makeinstall inst_dir="$RPM_BUILD_ROOT%{_gamesdatadir}/%{name}" bindir="$RPM_BUILD_ROOT%{_gamesbindir}"
+%makeinstall_std
 
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
 cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
