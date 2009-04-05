@@ -1,4 +1,4 @@
-%define release %mkrel 1
+%define release %mkrel 2
 
 Summary: Memory game
 Name: lpairs
@@ -6,6 +6,7 @@ Version: 1.0.4
 Release: %release
 URL: http://lgames.sourceforge.net/index.php?project=LPairs
 Source0: http://peterhost.dl.sourceforge.net/sourceforge/lgames/%{name}-%{version}.tar.gz
+Patch0:	lpairs-1.0.4-fix-desktop.patch
 License: GPLv2+
 Group: Games/Puzzles
 BuildRoot: %{_tmppath}/%{name}-buildroot
@@ -20,6 +21,7 @@ counted but there is no highscore chart or limit to this.
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
 %configure2_5x \
@@ -32,14 +34,10 @@ rm -rf $RPM_BUILD_ROOT
 %makeinstall_std
 
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
-cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
-[Desktop Entry]
-Type=Application
-Categories=Game;LogicGame;
-Name=LPairs
-Comment=Memory game
-Exec=/usr/games/lpairs
-EOF
+install -m644 %name.desktop $RPM_BUILD_ROOT%{_datadir}/applications/
+
+mkdir -p %buildroot%_iconsdir/
+convert -resize 32x32 %name.png %buildroot%_iconsdir/%name.png
 
 %find_lang %{name}
 
@@ -61,4 +59,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc README
 %{_gamesbindir}/%{name}
 %{_gamesdatadir}/%{name}/*
-%{_datadir}/applications/mandriva-%{name}.desktop
+%{_iconsdir}/*.png
+%{_datadir}/applications/*.desktop
