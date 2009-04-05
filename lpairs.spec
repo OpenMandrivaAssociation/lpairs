@@ -12,6 +12,7 @@ Group: Games/Puzzles
 BuildRoot: %{_tmppath}/%{name}-buildroot
 BuildRequires: SDL-devel
 BuildRequires: filesystem
+BuildRequires: imagemagick
 BuildRequires: texinfo
 
 %description
