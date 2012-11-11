@@ -1,0 +1,15 @@
+--- lpairs.desktop~	2008-08-23 15:31:50.000000000 +0200
++++ lpairs.desktop	2009-04-05 17:47:04.000000000 +0200
+@@ -1,9 +1,8 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=LPairs
+ GenericName=Memory Game
+ Comment=Classic memory game using SDL
+ Exec=lpairs
+-Icon=lpairs.png
++Icon=lpairs
+ Type=Application
+-Categories=Application;Game;LogicGame;
+\ No newline at end of file
++Categories=Game;LogicGame;
