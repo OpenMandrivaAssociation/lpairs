@@ -62,3 +62,59 @@ rm -rf $RPM_BUILD_ROOT
 %{_gamesdatadir}/%{name}/*
 %{_iconsdir}/*.png
 %{_datadir}/applications/*.desktop
+
+
+%changelog
+* Fri Dec 10 2010 Oden Eriksson <oeriksson@mandriva.com> 1.0.4-4mdv2011.0
++ Revision: 620259
+- the mass rebuild of 2010.0 packages
+
+* Mon Sep 14 2009 Thierry Vignaud <tv@mandriva.org> 1.0.4-3mdv2010.0
++ Revision: 439606
+- rebuild
+
+* Sun Apr 05 2009 Funda Wang <fwang@mandriva.org> 1.0.4-2mdv2009.1
++ Revision: 364186
+- Br imagemagick
+- adjust desktop file
+
+* Tue Oct 14 2008 Funda Wang <fwang@mandriva.org> 1.0.4-1mdv2009.1
++ Revision: 293535
+- New version 1.0.4
+- simplify BR
+
+* Mon Jul 28 2008 Thierry Vignaud <tv@mandriva.org> 1.0.3-3mdv2009.0
++ Revision: 251405
+- rebuild
+
+  + Pixel <pixel@mandriva.com>
+    - rpm filetriggers deprecates update_menus/update_scrollkeeper/update_mime_database/update_icon_cache/update_desktop_database/post_install_gconf_schemas
+    - adapt to %%_localstatedir now being /var instead of /var/lib (#22312)
+
+* Wed Mar 05 2008 Guillaume Bedot <littletux@mandriva.org> 1.0.3-1mdv2008.1
++ Revision: 179892
+- 1.0.3
+
+* Sat Jan 26 2008 Funda Wang <fwang@mandriva.org> 1.0.1-2mdv2008.1
++ Revision: 158189
+- fix menu entry
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+* Wed Dec 19 2007 Thierry Vignaud <tv@mandriva.org> 1.0.1-1mdv2008.1
++ Revision: 133909
+- auto-convert XDG menu entry
+- kill re-definition of %%buildroot on Pixel's request
+- buildrequires X11-devel instead of XFree86-devel
+- import lpairs
+
+
+* Wed Jul 20 2005 Nicolas Lécureuil <neoclust@mandriva.org> 1.0.1-1mdk
+- 1.0.1
+
+* Fri Jul 01 2005 Rafael Garcia-Suarez <rgarciasuarez@mandriva.com> 1.0-2mdk
+- Rebuild
+
+* Thu Jan 20 2005 Rafael Garcia-Suarez <rgarciasuarez@mandrakesoft.com> 1.0-1mdk
+- Initial MDK release (for Pablo)
