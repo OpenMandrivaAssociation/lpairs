@@ -1,4 +1,4 @@
-%define release %mkrel 4
+%define release 5
 
 Summary: Memory game
 Name: lpairs
