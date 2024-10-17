@@ -4,7 +4,7 @@ Summary: Memory game
 Name: lpairs
 Version: 1.0.4
 Release: %release
-URL: http://lgames.sourceforge.net/index.php?project=LPairs
+URL: https://lgames.sourceforge.net/index.php?project=LPairs
 Source0: http://peterhost.dl.sourceforge.net/sourceforge/lgames/%{name}-%{version}.tar.gz
 Patch0:	lpairs-1.0.4-fix-desktop.patch
 License: GPLv2+
