@@ -10,6 +10,11 @@ Patch0:	lpairs-1.0.4-fix-desktop.patch
 License: GPLv2+
 Group: Games/Puzzles
 BuildRoot: %{_tmppath}/%{name}-buildroot
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires: SDL-devel
 BuildRequires: filesystem
 BuildRequires: imagemagick
